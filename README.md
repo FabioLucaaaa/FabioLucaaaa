@@ -15,6 +15,8 @@
 
 <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" alt="Banner" width="100%" />
 
+###
+
 <h4 data-importer="text" align="center">🛠️ Sprachen:</h4>
 
 <div data-importer="techs" align="center">
@@ -96,10 +98,6 @@
 
 ###
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/FabioLucaaaa/FabioLucaaaa/pacman-output/pacman-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/FabioLucaaaa/FabioLucaaaa/pacman-output/pacman-contribution-graph.svg">
-    <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/FabioLucaaaa/FabioLucaaaa/pacman-output/pacman-contribution-graph.svg" style="margin: 0 auto; display: block;">
-  </picture>
+<div data-importer="border">
+  <img style="width:100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=20&descAlign=50&descAlignY=50&textBg=false&theme=cobalt" />
 </div>
