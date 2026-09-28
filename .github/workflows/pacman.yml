@@ -1,0 +1,42 @@
+name: Generate Pacman Contribution Graph
+
+on:
+  schedule:
+    # Läuft automatisch jeden Tag um 00:00 Uhr UTC
+    - cron: "0 0 * * *"
+  
+  # Erlaubt es dir, das Skript jederzeit manuell mit einem Klick zu starten
+  workflow_dispatch:
+  
+  # Führt das Skript aus, sobald Änderungen in den main-Branch gepusht werden
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      # 1. Quellcode laden
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Pacman-Animation aus den GitHub-Contributions berechnen und SVGs generieren
+      - name: Generate Pacman SVGs
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/pacman-contribution-graph.svg?game=pacman
+            dist/pacman-contribution-graph-dark.svg?game=pacman&palette=github-dark
+
+      # 3. Die erstellten SVGs in den Branch "pacman-output" hochladen
+      - name: Deploy to pacman-output Branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: pacman-output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
